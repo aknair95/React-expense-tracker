@@ -1,8 +1,8 @@
 
-import ExpenseItem from "./components/ExpenseItem";
-import './components/ExpenseItem.css';
+import ExpenseItem from "./components/Expense/ExpenseItem";
+import './components/Expense/ExpenseItem.css';
 
-function App() {
+const App=() => {
   const expenses=[
     { 
       date: new Date(2023,1,24),
