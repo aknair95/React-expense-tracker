@@ -8,19 +8,19 @@ const App=() => {
       date: new Date(2023,1,24),
       title: "Food",
       location: "Delhi",
-      amount: "Rs 10"
+      amount: "$10"
     },
     {
       date: new Date(2023,2,12),
       title: "Movie",
       location: "Mumbai",
-      amount: "Rs 100"
+      amount: "$100"
     },
     { 
       date: new Date(2023,3,5),
       title: "Petrol",
       location: "Agra",
-      amount: "Rs 1000"
+      amount: "$1000"
     }
   ];
 
