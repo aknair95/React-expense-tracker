@@ -9,7 +9,12 @@ let ExpenseForm=() =>{
 
     let addExpense=(e) =>{
         e.preventDefault();
-        console.log("Expense added !!!");
+        const userData={
+            date: enteredDate,
+            title: enteredTitle,
+            amount: enteredAmount
+        }
+        console.log(`Date-${userData.date} Title-${userData.title} Amount-${userData.amount}`);
     }
 
     let addDate= (e1) =>{

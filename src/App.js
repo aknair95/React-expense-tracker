@@ -29,7 +29,7 @@ const App=() => {
     <div className="App">
       <header className="App-header">
       <NewExpense/>
-      <h2 className='expense-item h2'>Expense Items-</h2>
+      <h2 className='expense-item h2'>Expenses-</h2>
         <div>
           <ExpenseItem title={expenses[0].title} amount={expenses[0].amount} location={expenses[0].location} date={expenses[0].date}/>
           <ExpenseItem title={expenses[1].title} amount={expenses[1].amount} location={expenses[1].location} date={expenses[0].date}/>
