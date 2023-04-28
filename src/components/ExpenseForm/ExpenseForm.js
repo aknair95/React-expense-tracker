@@ -1,20 +1,26 @@
 import { useState } from "react";
 import "./ExpenseForm.css";
 
-let ExpenseForm=() =>{
+let ExpenseForm=(props) =>{
 
     const [enteredDate,setDate]= useState("");
     const [enteredTitle,setTitle]= useState("");
     const [enteredAmount,setAmount]= useState("");
+    const [enteredLocation,setLocation]= useState("");
 
     let addExpense=(e) =>{
         e.preventDefault();
-        const userData={
-            date: enteredDate,
+        const expenseData={
+            date: new Date(enteredDate),
             title: enteredTitle,
-            amount: enteredAmount
+            amount: `$${enteredAmount}`,
+            location: enteredLocation
         }
-        console.log(`Date-${userData.date} Title-${userData.title} Amount-${userData.amount}`);
+        props.onSaveExpenseData(expenseData);
+        setDate("");
+        setTitle("");
+        setAmount("");
+        setLocation("");
     }
 
     let addDate= (e1) =>{
@@ -29,20 +35,28 @@ let ExpenseForm=() =>{
         setAmount(e3.target.value);
     }
 
+    let addLocation= (e4) =>{
+        setLocation(e4.target.value);
+    }
+
     return(
         <form>
             <div className="new-expense__controls">
                 <div className="new-expense__control">
                     <label>Date-</label>
-                    <input type="date" onChange={addDate}/>
+                    <input type="date" value={enteredDate} onChange={addDate}/>
                 </div>
                 <div className="new-expense__control">
                     <label>Title-</label>
-                    <input type="text" onChange={addTitle}/>
+                    <input type="text" value={enteredTitle} onChange={addTitle}/>
                 </div>
                 <div className="new-expense__control">
                     <label>Amount-</label>
-                    <input type="number" onChange={addAmount}/>
+                    <input type="number" value={enteredAmount} onChange={addAmount}/>
+                </div>
+                <div className="new-expense__control">
+                    <label>Location-</label>
+                    <input type="text" value={enteredLocation} onChange={addLocation}/>
                 </div>
             </div>
             <div className="new-expense__actions">

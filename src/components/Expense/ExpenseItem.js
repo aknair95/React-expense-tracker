@@ -19,7 +19,9 @@ const ExpenseItem=(props) => {
     const [amount,changeAmount]= useState(props.amount);
     const changeExpense=() =>{
         changeAmount("$100");
+        console.log("$100");
     }
+
     return (
         <Card className="expense-item">
             <ExpenseDate date={props.date}/>
