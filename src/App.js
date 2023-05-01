@@ -1,9 +1,9 @@
 
 import { useState } from "react";
-import ExpenseItem from "./components/Expense/ExpenseItem";
 import './components/Expense/ExpenseItem.css';
 import NewExpense from "./components/ExpenseForm/NewExpense";
 import ExpenseFilter from "./components/filter/ExpenseFilter";
+import ExpenseList from "./components/filter/ExpenseList";
 
 const App=() => {
 
@@ -38,6 +38,8 @@ const App=() => {
 
   const [filterYear,setFilterYear]= useState("2020");
 
+  const filteredExpenses=expense.filter((element)=> element.date.getFullYear().toString().includes(filterYear));          //filterering expenses by year as per user input
+                                 
   const filterChangeHandler=(selectedFilter) =>{
     setFilterYear(selectedFilter);
   }
@@ -49,12 +51,7 @@ const App=() => {
       <ExpenseFilter selectedYear={filterYear} onExpenseFilterChange={filterChangeHandler}/>
       <h2 className='expense-item h2'>Expenses-</h2>
         <div>
-         {
-           expense.filter((element)=> element.date.getFullYear().toString().includes(filterYear)                                    //filterering expenses by year as per user input
-           ).map((item) => (
-          <ExpenseItem key={Math.random()} title={item.title} amount={item.amount} location={item.location} date={item.date}/>      //iterating expense array 
-         ))
-         } 
+          <ExpenseList items={filteredExpenses}/>
         </div>
       </header>
     </div>
