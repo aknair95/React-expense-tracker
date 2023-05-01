@@ -1,3 +1,4 @@
+// component for adding new expense
 
 import "./NewExpense.css";
 import ExpenseForm from "./ExpenseForm";

@@ -7,7 +7,7 @@ import ExpenseList from "./components/filter/ExpenseList";
 
 const App=() => {
 
-  const expenses=[
+  const expenses=[                                                                         //static expenses data array
     { 
       date: new Date(2023,1,24),
       title: "Food",
@@ -30,7 +30,7 @@ const App=() => {
 
   const [expense,updateExpense]= useState(expenses);
 
-  const onAddExpenseHandler=(newExpense) =>{
+    const onAddExpenseHandler=(newExpense) =>{                                                  //function to handle new added expense & update existing array
     updateExpense((prevExpense) =>{
       return [{date:newExpense.date,title:newExpense.title,amount:newExpense.amount,location:newExpense.location},...prevExpense];
     });
@@ -40,7 +40,7 @@ const App=() => {
 
   const filteredExpenses=expense.filter((element)=> element.date.getFullYear().toString().includes(filterYear));          //filterering expenses by year as per user input
                                  
-  const filterChangeHandler=(selectedFilter) =>{
+  const filterChangeHandler=(selectedFilter) =>{                                                 //function to handle filter year change
     setFilterYear(selectedFilter);
   }
 

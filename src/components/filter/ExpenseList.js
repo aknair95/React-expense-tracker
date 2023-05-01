@@ -1,3 +1,4 @@
+// component for conditional content displaying
 
 import "./ExpenseList.css";
 import ExpenseItem from "../Expense/ExpenseItem";

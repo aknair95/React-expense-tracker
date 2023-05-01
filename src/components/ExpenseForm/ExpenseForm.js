@@ -1,3 +1,5 @@
+//component for fetching expense data from user by form
+
 import { useState } from "react";
 import "./ExpenseForm.css";
 
@@ -10,20 +12,20 @@ let ExpenseForm=(props) =>{
 
     let addExpense=(e) =>{
         e.preventDefault();
-        const expenseData={
+        const expenseData={                                                     //storing form fetched data into an object
             date: new Date(enteredDate),
             title: enteredTitle,
             amount: `$${enteredAmount}`,
             location: enteredLocation
         }
         props.onSaveExpenseData(expenseData);
-        setDate("");
+        setDate("");                                                           // resetting form input fields after form is submitted
         setTitle("");
         setAmount("");
         setLocation("");
     }
-
-    let addDate= (e1) =>{
+                                                                                
+    let addDate= (e1) =>{                                                       // fetching user inputted values
         setDate(e1.target.value);
     }
 
