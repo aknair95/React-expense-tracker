@@ -1,4 +1,6 @@
 
+import './ExpenseItem.css';
+
 const ExpenseDetail=(props) => {
     return(
        <div>
