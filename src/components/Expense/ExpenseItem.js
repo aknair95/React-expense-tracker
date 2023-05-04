@@ -18,20 +18,20 @@ const ExpenseItem=(props) => {
 
     const [amount,changeAmount]= useState(props.amount);
     const changeExpense=() =>{
-        changeAmount("$100");
+        changeAmount("100");
         console.log("$100");
     }
 
     return (
-        <Card className="expense-item">
-            <ExpenseDate date={props.date}/>
-            <div className="expense-item__description"> 
+        <li className='expense-item'>
+            <Card>
+                <ExpenseDate date={props.date}/>
                 <ExpenseDetail title={title} location={props.location} amount={amount}/>
-            </div>
-            <button onClick={changeTitle}>Change Title</button>
-            <button onClick={deleteExpense}>Delete Expense</button>
-            <button onClick={changeExpense}>Change Expense</button>
-        </Card>
+                <button onClick={changeTitle}>Change Title</button>
+                <button onClick={deleteExpense}>Delete Expense</button>
+                <button onClick={changeExpense}>Change Expense</button>
+            </Card>   
+        </li>      
     )
 }
 export default ExpenseItem;

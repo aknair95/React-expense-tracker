@@ -13,25 +13,25 @@ const App=() => {
       date: new Date(2023,1,24),
       title: "Food",
       location: "Delhi",
-      amount: "$10"
+      amount: "10"
     },
     {
       date: new Date(2023,2,12),
       title: "Movie",
       location: "Mumbai",
-      amount: "$100"
+      amount: "100"
     },
     { 
       date: new Date(2023,3,5),
       title: "Petrol",
       location: "Agra",
-      amount: "$1000"
+      amount: "1000"
     },
     { 
       date: new Date(2021,3,5),
       title: "Petrol",
       location: "Agra",
-      amount: "$1000"
+      amount: "1000"
     }
   ];
 
@@ -54,14 +54,14 @@ const App=() => {
   return (
     <div>
       <NewExpense onAddExpense={onAddExpenseHandler}/>         {/*component handling form to add new expense*/}
-      <Card className="expenses">
-        <ExpenseFilter selectedYear={filterYear} onExpenseFilterChange={filterChangeHandler}/>   {/*component handling year filter*/}
-        <ExpensesChart expenses={filteredExpenses}/>              {/*component handling chart bar */}
-        <h2 className='expense-item h2'>Expenses-</h2>
-          <div>
-            <ExpenseList items={filteredExpenses}/>               {/*component handling expense listing by year */}
-          </div>
-      </Card>
+      <div className="expenses">
+        <Card>
+          <ExpenseFilter selectedYear={filterYear} onExpenseFilterChange={filterChangeHandler}/>   {/*component handling year filter*/}
+          <ExpensesChart expenses={filteredExpenses}/>              {/*component handling chart bar */}
+          <h2 className='expense-item-h2'>EXPENSES</h2>
+          <ExpenseList items={filteredExpenses}/>               {/*component handling expense listing by year */}
+        </Card>
+      </div>
     </div>
   )
 }

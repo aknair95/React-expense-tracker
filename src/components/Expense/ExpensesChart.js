@@ -22,7 +22,10 @@ const ExpensesChart=(props) =>{
         chartDataPoints[expenseMonth].value+=exp.amount;
     }
     return(
-        <Chart dataPoints={chartDataPoints}/>
+        <div>
+             <Chart dataPoints={chartDataPoints}/>
+        </div>
+       
     )
 }
 

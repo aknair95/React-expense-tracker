@@ -1,19 +1,14 @@
 
 import ChartBar from "./ChartBar";
+import "./Chart.css";
 
 const Chart=(props) =>{
     const dataPointsValues=props.dataPoints.map((dataPoint) =>dataPoint.value);
-    let maxvalue=0;
-    for(const value in dataPointsValues)
-    {
-        if(value>maxvalue){
-           maxvalue=value;
-        }
-    } 
+    const maximumValue=Math.max(...dataPointsValues);
     return (
         <div className="chart">
             { props.dataPoints.map((datapoint) =>{
-                return <ChartBar key={Math.random()} value={datapoint.value} maxValue={maxvalue} label={datapoint.label} />
+                return <ChartBar key={Math.random()} value={datapoint.value} maxValue={maximumValue} label={datapoint.label} />
             })}
         </div>
     )
